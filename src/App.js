@@ -1,3 +1,4 @@
+
 import './App.css';
 import MapViewer from './components/MapViewer/MapViewer';
 
@@ -6,6 +7,7 @@ function App() {
     <div>
       <MapViewer/>
     </div>
+
   );
 }
 
