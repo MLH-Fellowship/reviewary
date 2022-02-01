@@ -34,6 +34,7 @@ export default function MapViewer(props) {
                 imageId={'550092599700936'}
                 style={{width: '100vw', height: '100vh'}}
             />
+            <button className='absolute bottom-0 left-0 bg-slate-900'>Leave a Guide</button>
         </div>
     );
   }
