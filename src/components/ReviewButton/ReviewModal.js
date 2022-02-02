@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useSelector, useDispatch } from 'react-redux'
 
 export default function ReviewModal(props) {
   const setShowModal = props.setShowModal;
@@ -6,7 +7,9 @@ export default function ReviewModal(props) {
     title: "",
     description: ""
   });
+  const userInfo = useSelector((state) => state.user);
   const handleChange = (event) => {
+    console.log(userInfo)
     const { name, value } = event.target;
     setReview({ ...review, [name]: value });
   };

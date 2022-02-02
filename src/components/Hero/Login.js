@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { ReactComponent as Mapillary } from "../../assets/mapilarry.svg";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { setUser } from '../../redux/userSlice'
+
 
 export default function Login() {
   const [userInfo, setUserInfo] = useState({
@@ -13,9 +15,14 @@ export default function Login() {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setUserInfo({ ...userInfo, [name]: value });
+    console.log(userInfo);
+
   };
 
   const handleSubmit = () => {
+    console.log(userInfo);
+    dispatch(setUser(userInfo));
+
   }
 
   return (
