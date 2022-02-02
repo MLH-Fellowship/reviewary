@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from "react-redux";
+import { setReviewForm } from "../../redux/reviewSlice";
 
 export default function ReviewModal(props) {
   const setShowModal = props.setShowModal;
@@ -7,12 +8,16 @@ export default function ReviewModal(props) {
     title: "",
     description: ""
   });
-  const userInfo = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
   const handleChange = (event) => {
-    console.log(userInfo)
     const { name, value } = event.target;
     setReview({ ...review, [name]: value });
   };
+
+  const handleSubmit = () => {
+    dispatch(setReviewForm(review));
+  }
   return (
     <>
       <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -34,7 +39,7 @@ export default function ReviewModal(props) {
             {/*body*/}
             <div className="relative p-6 flex-auto">
               <div className="w-full ">
-                <form className="bg-white pt-1 pb-3">
+                <form className="bg-white pt-1 pb-3" onSubmit={handleSubmit}>
                   <div className="mb-3">
                     <label
                       className="block text-gray-700 text-sm font-bold mb-2"
