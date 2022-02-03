@@ -1,6 +1,7 @@
 import React from 'react';
 import {Viewer} from 'mapillary-js';
 import ReviewButton from '../ReviewButton/ReviewButton';
+import BackButton from '../BackButton/BackButton';
 
 export default function MapViewer(props) {
     class ViewerComponent extends React.Component {
@@ -36,6 +37,7 @@ export default function MapViewer(props) {
                 style={{width: '100vw', height: '100vh'}}
             />
             <ReviewButton/>
+            <BackButton/>
         </div>
     );
   }

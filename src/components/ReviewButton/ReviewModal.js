@@ -1,8 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
+import { useDispatch } from "react-redux";
+import { setReviewForm } from "../../redux/reviewSlice";
 
 export default function ReviewModal(props) {
   const setShowModal = props.setShowModal;
-  
+  const [review, setReview] = useState({
+    title: "",
+    description: ""
+  });
+  const dispatch = useDispatch();
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setReview({ ...review, [name]: value });
+  };
+
+  const handleSubmit = () => {
+    dispatch(setReviewForm(review));
+  }
   return (
     <>
       <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -23,35 +38,39 @@ export default function ReviewModal(props) {
             </div>
             {/*body*/}
             <div className="relative p-6 flex-auto">
-              <div class="w-full ">
-                <form class="bg-white pt-1 pb-3">
-                  <div class="mb-3">
+              <div className="w-full ">
+                <form className="bg-white pt-1 pb-3" onSubmit={handleSubmit}>
+                  <div className="mb-3">
                     <label
-                      class="block text-gray-700 text-sm font-bold mb-2"
-                      for="username"
+                      className="block text-gray-700 text-sm font-bold mb-2"
                     >
                       Title
                     </label>
                     <input
-                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       id="username"
                       type="text"
                       placeholder="Title"
+                      name="title"
+                      value={review.title}
+                      onChange={handleChange}
                       required
                     />
                   </div>
-                  <div class="mb-3">
+                  <div className="mb-3">
                     <label
-                      class="block text-gray-700 text-sm font-bold mb-2"
-                      for="username"
+                      className="block text-gray-700 text-sm font-bold mb-2"
                     >
                       Description
                     </label>
                     <textarea
-                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       id="username"
                       type="text"
                       placeholder="Share your thoughts"
+                      name="description"
+                      value={review.description}
+                      onChange={handleChange}
                       required
                     />
                   </div>
