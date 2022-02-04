@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { ReactComponent as Mapillary } from "../../assets/mapilarry.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../../redux/userSlice";
 
 export default function Login() {
   let navigate = useNavigate();
+  const { country, city, flag, ip } = useSelector((state) => state.user);
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
   });
+  const [showIp, setShowIp] = useState(false);
   const dispatch = useDispatch();
 
   const handleChange = (event) => {
@@ -35,6 +37,23 @@ export default function Login() {
           <p className="text-center  w-60 pt-3  text-gray-500">
             explore the world from a different prospective
           </p>
+        </div>
+        <div className="flex flex-row gap-2">
+          <p className="font-semibold">
+            {" "}
+            Hello to,<code className="text-lg"> {city}</code> ,
+            <code className="text-lg"> {country}</code>
+          </p>
+          <img src={flag} alt="flag" className=" w-8 " />
+        </div>
+        <div className=" flex flex-col items-center justify-center">
+          <p
+            className="text-gray-400 font-light cursor-pointer"
+            onClick={() => setShowIp(!showIp)}
+          >
+            show ip{" "}
+                    </p>
+          {showIp && <p className="text-gray-900 font-bold">{ip}</p>}
         </div>
         <form className="flex flex-col gap-5 pt-10" onSubmit={handleSubmit}>
           <input
@@ -67,7 +86,7 @@ export default function Login() {
               href="https://mapillary.github.io/mapillary-js/examples/component-marker-map/"
               className=" mt-3 self-center bg-transparent text-slate-600 font-bold py-2 px-4 rounded-2xl hover:bg-transparent hover:text-orange-600 border-2 border-slate-600  hover:border-orange-600 transition"
             >
-              Experimental 
+              Experimental
             </a>
           </div>
           {/* </Link> */}
