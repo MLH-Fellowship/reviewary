@@ -4,6 +4,10 @@ const initialState = {
   name: "",
   email:"",
   locationInfo:{},
+  ip:"",
+  country:"", 
+  flag: " ",
+  city: "",
 }
 
 export const userSlice = createSlice({
@@ -22,7 +26,10 @@ export const userSlice = createSlice({
       state.name = action.payload.name
     },
     setLocationInfo: (state, action) => {
-      state.locationInfo = action.payload.locationInfo;
+      state.ip = action.payload.ip;
+      state.country = action.payload.country_name;
+      state.flag = action.payload.flag;
+      state.city = action.payload.city;
     }
   },
 })
