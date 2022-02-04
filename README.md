@@ -17,3 +17,35 @@ We're able to finish the most of the application that we planned to have in the 
 We learned a lot more about Mapillary, the OSS project that we'll be working on in the next few weeks. 
 ## What's next for Reviewary
 There are a lot of things we want to do for Reviewary. A backend server can be integrated to persist user data and authenticate/authorize users. Instead of assigning user a starting point, we want to give users the flexibility to chose a starting point on the map. 3D characters are heavy in general, so optimization is needed to boost up the application.
+<br/> 
+# Technical stuff
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
