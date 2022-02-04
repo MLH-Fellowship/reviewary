@@ -8,7 +8,7 @@ import axios from "axios";
 
 async function getLocationInfo(dispatch) {
   await axios
-    .get(`https://api.ipdata.co/?api-key=${process.env.REACT_APP_IPDATA}`)
+    .get(`https://api.ipdata.co/?api-key=a4098f89e8ceb83ca53f144e14088a4f1407aabb77d9b479b3a3b005`)
     .then((res) => {
       console.log(res);
       dispatch(setLocationInfo(res.data));
