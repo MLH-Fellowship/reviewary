@@ -56,12 +56,20 @@ export default function Login() {
             className="rounded-2xl py-2  border-2 border-cyan-500 placeholder-cyan-500 font-semibold text-center p-1 focus:border-orange-600 "
           />
           {/* <Link to="/map"> */}
-          <button
-            type="submit"
-            className="w-32 mt-3 self-center bg-orange-600 text-white font-bold py-2 px-4 rounded-2xl hover:bg-transparent hover:text-orange-600 border-2 border-orange-600  transition"
-          >
-            Enter
-          </button>
+          <div className="flex flex-row gap-2 justify-evenly">
+            <button
+              type="submit"
+              className="w-28  mt-3 self-center bg-orange-600 text-white font-bold py-2 px-4 rounded-2xl hover:bg-transparent hover:text-orange-600 border-2 border-orange-600  transition"
+            >
+              Enter
+            </button>
+            <a
+              href="https://mapillary.github.io/mapillary-js/examples/component-marker-map/"
+              className=" mt-3 self-center bg-transparent text-slate-600 font-bold py-2 px-4 rounded-2xl hover:bg-transparent hover:text-orange-600 border-2 border-slate-600  hover:border-orange-600 transition"
+            >
+              Experimental 
+            </a>
+          </div>
           {/* </Link> */}
         </form>
       </div>
