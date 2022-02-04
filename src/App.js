@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import { useDispatch } from "react-redux";
 import { setLocationInfo } from "./redux/userSlice";
 import Home from "./pages/Home";
