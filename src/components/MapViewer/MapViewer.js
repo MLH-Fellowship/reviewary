@@ -32,7 +32,7 @@ export default function MapViewer(props) {
     return (
         <div>
             <ViewerComponent
-                accessToken={'MLY|4765176310202108|382fb83fed4193ec7306ab80b6d1dc2a'}
+                accessToken={process.env.REACT_APP_MAPILLARY}
                 imageId={'550092599700936'}
                 style={{width: '100vw', height: '100vh'}}
             />
