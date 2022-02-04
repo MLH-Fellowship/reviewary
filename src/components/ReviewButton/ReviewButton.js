@@ -6,7 +6,7 @@ export default function ReviewButton() {
   return (
     <>
       <button
-        className="absolute bottom-5 left-10 bg-black text-white active:bg-gray-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        className="absolute bottom-5 rounded-xl left-10 bg-orange-600 text-white active:bg-gray-600 font-bold uppercase text-sm px-6 py-3  shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
         type="button"
         onClick={() => setShowModal(true)}
       >
